@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkillMentor - Comprehensive Project Documentation</title>
+    <style>
+      :root {
+        --primary-color: #4f46e5; /* Indigo 600 */
+        --secondary-color: #1e1b4b; /* Indigo 950 */
+        --text-color: #334155; /* Slate 700 */
+        --bg-color: #f8fafc; /* Slate 50 */
+        --card-bg: #ffffff;
+        --border-color: #e2e8f0;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: var(--bg-color);
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: 250px 1fr;
+        gap: 2rem;
+      }
+
+      /* Sidebar Navigation */
+      nav {
+        position: sticky;
+        top: 2rem;
+        height: fit-content;
+        background: var(--card-bg);
+        padding: 1.5rem;
+        border-radius: 1rem;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      nav li {
+        margin-bottom: 0.75rem;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: var(--text-color);
+        font-weight: 500;
+        display: block;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        transition: all 0.2s;
+      }
+
+      nav a:hover,
+      nav a.active {
+        background-color: #eff6ff;
+        color: var(--primary-color);
+      }
+
+      /* Main Content */
+      main {
+        background: var(--card-bg);
+        padding: 3rem;
+        border-radius: 1rem;
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        color: var(--secondary-color);
+        margin-top: 2rem;
+      }
+
+      h1 {
+        margin-top: 0;
+        font-size: 2.5rem;
+        border-bottom: 2px solid var(--border-color);
+        padding-bottom: 1rem;
+      }
+      h2 {
+        font-size: 1.8rem;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 0.5rem;
+      }
+      h3 {
+        font-size: 1.4rem;
+        color: var(--primary-color);
+      }
+
+      p {
+        margin-bottom: 1rem;
+      }
+
+      /* Tables */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.5rem 0;
+      }
+
+      th,
+      td {
+        padding: 0.75rem;
+        border: 1px solid var(--border-color);
+        text-align: left;
+      }
+
+      th {
+        background-color: #f1f5f9;
+        font-weight: 600;
+      }
+
+      /* Lists */
+      ul.feature-list {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      ul.feature-list li {
+        background: #f8fafc;
+        margin-bottom: 0.5rem;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-left: 4px solid var(--primary-color);
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-left: 0.5rem;
+      }
+      .badge-core {
+        background-color: #dbeafe;
+        color: #1e40af;
+      }
+      .badge-premium {
+        background-color: #fce7f3;
+        color: #9d174d;
+      }
+
+      /* Diagrams/Code */
+      code {
+        background-color: #f1f5f9;
+        padding: 0.2rem 0.4rem;
+        border-radius: 0.25rem;
+        font-family: monospace;
+        font-size: 0.9em;
+      }
+
+      pre {
+        background-color: #1e293b;
+        color: #e2e8f0;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        overflow-x: auto;
+      }
+
+      /* Footer */
+      footer {
+        margin-top: 3rem;
+        text-align: center;
+        font-size: 0.9rem;
+        color: #64748b;
+        border-top: 1px solid var(--border-color);
+        padding-top: 1rem;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          grid-template-columns: 1fr;
+        }
+        nav {
+          position: static;
+          margin-bottom: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="#executive-summary">Executive Summary</a></li>
+          <li><a href="#prd">Product Requirements (PRD)</a></li>
+          <li><a href="#actors-roles">Actors & Roles</a></li>
+          <li><a href="#features">Feature Specifications</a></li>
+          <li><a href="#tech-stack">Technical Architecture</a></li>
+          <li><a href="#data-model">Data Model</a></li>
+          <li><a href="#ui-ux">UI/UX Design System</a></li>
+          <li><a href="#roadmap">Future Roadmap</a></li>
+        </ul>
+      </nav>
+
+      <main>
+        <header>
+          <h1>SkillMentor Project Documentation</h1>
+          <p>
+            <strong>Version:</strong> 1.0.0 | <strong>Date:</strong> 2026-01-12
+          </p>
+          <p>
+            <strong>Status:</strong> MVP Completed & Premium Redesign
+            Implemented
+          </p>
+        </header>
+
+        <section id="executive-summary">
+          <h2>1. Executive Summary</h2>
+          <p>
+            <strong>SkillMentor</strong> is a modern, AI-enhanced learning
+            management system (LMS) designed to empower students and lifelong
+            learners. It combines the utility of traditional flashcards with
+            advanced study modes, collaborative class features, and a premium
+            "glassmorphism" aesthetic.
+          </p>
+          <p>
+            The platform is built for speed, visual appeal, and ease of use,
+            leveraging a real-time backend (Convex) and a robust React-based
+            frontend (Next.js).
+          </p>
+        </section>
+
+        <section id="prd">
+          <h2>2. Product Requirements Document (PRD)</h2>
+
+          <h3>2.1 Problem Statement</h3>
+          <p>
+            Traditional study tools are often clunky, visually unappealing, or
+            lack collaborative features. Students need a platform that makes
+            studying engaging through gamification, aesthetic design, and
+            seamless sharing capabilities.
+          </p>
+
+          <h3>2.2 Goals</h3>
+          <ul>
+            <li>
+              <strong>Engagement:</strong> Increase study time through visually
+              pleasing UI and gamified modes (Match, Test).
+            </li>
+            <li>
+              <strong>Collaboration:</strong> Enable students to share knowledge
+              easily via Classes.
+            </li>
+            <li>
+              <strong>Simplicity:</strong> Provide an intuitive "zero-friction"
+              onboarding experience.
+            </li>
+            <li>
+              <strong>Performance:</strong> Ensure real-time updates and fast
+              transitions using modern tech.
+            </li>
+          </ul>
+
+          <h3>2.3 Target Audience</h3>
+          <table>
+            <tr>
+              <th>Segment</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td><strong>Students (High School/University)</strong></td>
+              <td>
+                Primary users. Need flashcards, practice tests, and mobile
+                accessibility for exams.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Lifelong Learners</strong></td>
+              <td>
+                Self-paced learners focusing on languages or professional
+                certifications.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Teachers/Educators</strong></td>
+              <td>
+                Create curriculum, manage classes, and distribute study sets to
+                groups.
+              </td>
+            </tr>
+          </table>
+        </section>
+
+        <section id="actors-roles">
+          <h2>3. Actors & Roles</h2>
+
+          <h3>3.1 System Actors</h3>
+          <ul>
+            <li>
+              <strong>Guest:</strong> A visitor who has not logged in. Can view
+              the Landing Page, Features, and Pricing. Restricted from viewing
+              specific study sets or classes.
+            </li>
+            <li>
+              <strong>Authenticated User:</strong> A logged-in user with a
+              comprehensive dashboard.
+            </li>
+            <li>
+              <strong>System (SkillMentor Platform):</strong> Handles
+              authentication, data persistence, payment processing (mock), and
+              AI content generation (planned).
+            </li>
+          </ul>
+
+          <h3>3.2 Functional Roles</h3>
+          <p>Roles define permissions within the application context.</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Role</th>
+                <th>Permissions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Student (Default)</strong></td>
+                <td>
+                  <ul>
+                    <li>Create/Edit/Delete own Study Sets</li>
+                    <li>Create/Edit/Delete own Folders</li>
+                    <li>Join Classes via invite</li>
+                    <li>Study all public sets</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Teacher</strong></td>
+                <td>
+                  <ul>
+                    <li>All Student permissions</li>
+                    <li>Create and Manage Classes</li>
+                    <li>View Class Analytics (Future)</li>
+                    <li>Manage Student Rosters</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Admin</strong></td>
+                <td>
+                  System oversight, user management, and global content
+                  moderation.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="features">
+          <h2>4. Feature Specifications</h2>
+
+          <h3>4.1 Study Sets <span class="badge badge-core">Core</span></h3>
+          <p>The fundamental unit of learning on SkillMentor.</p>
+          <ul class="feature-list">
+            <li>
+              <strong>Creation:</strong> Rich text editor for Term and
+              Definition pairs. Supports visibility settings (Public/Private).
+            </li>
+            <li>
+              <strong>Flashcards Mode:</strong> Classic flip-card interface with
+              keyboard navigation.
+            </li>
+            <li>
+              <strong>Learn Mode:</strong> Adaptive questioning to reinforce
+              weak terms.
+            </li>
+            <li>
+              <strong>Test Mode:</strong> Generated quizzes (Multiple choice,
+              True/False, Written) with instant grading.
+            </li>
+            <li>
+              <strong>Match Mode:</strong> Gamified timed challenge to match
+              terms to definitions.
+            </li>
+          </ul>
+
+          <h3>
+            4.2 Classes & Collaboration
+            <span class="badge badge-core">Core</span>
+          </h3>
+          <p>Enables social learning and content distribution.</p>
+          <ul class="feature-list">
+            <li>
+              <strong>Class Creation:</strong> Users (Teachers) can create named
+              classes with descriptions.
+            </li>
+            <li><strong>Membership:</strong> Users can join classes.</li>
+            <li>
+              <strong>Content Sharing:</strong> Study sets can be linked to
+              specific classes for all members to access.
+            </li>
+          </ul>
+
+          <h3>4.3 Organization <span class="badge badge-core">Core</span></h3>
+          <p>Tools to keep high-volume learners organized.</p>
+          <ul class="feature-list">
+            <li>
+              <strong>Folders:</strong> Group related study sets together (e.g.,
+              "Biology 101", "Spanish Vocab").
+            </li>
+            <li>
+              <strong>Dashboard:</strong> Centralized hub showing "Your Study
+              Sets", "Your Classes", and quick actions.
+            </li>
+          </ul>
+
+          <h3>
+            4.4 Authentication & Security
+            <span class="badge badge-premium">Integration</span>
+          </h3>
+          <ul class="feature-list">
+            <li><strong>Provider:</strong> Clerk (Third-party Auth).</li>
+            <li>
+              <strong>Methods:</strong> Email/Password, Social Login (Google,
+              GitHub).
+            </li>
+            <li>
+              <strong>Protection:</strong> Middleware protects `/dashboard`,
+              `/sets`, and `/classes` routes.
+            </li>
+          </ul>
+        </section>
+
+        <section id="tech-stack">
+          <h2>5. Technical Architecture</h2>
+
+          <h3>5.1 Technology Stack</h3>
+          <table>
+            <tr>
+              <th>Layer</th>
+              <th>Technology</th>
+              <th>Justification</th>
+            </tr>
+            <tr>
+              <td><strong>Frontend Framework</strong></td>
+              <td>Next.js 14 (App Router)</td>
+              <td>
+                Server-side rendering, robust routing, and industry standard for
+                React apps.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Styling</strong></td>
+              <td>Tailwind CSS</td>
+              <td>
+                Utility-first CSS for rapid UI development and custom design
+                systems.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Backend / DB</strong></td>
+              <td>Convex</td>
+              <td>
+                Real-time database, backend-as-a-service, automatic caching, and
+                type-safe API.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Authentication</strong></td>
+              <td>Clerk</td>
+              <td>
+                Seamless, secure, and pre-built UI components for auth flows.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Icons</strong></td>
+              <td>Lucide React</td>
+              <td>Clean, modern SVG icons that match the premium aesthetic.</td>
+            </tr>
+          </table>
+
+          <h3>5.2 Folder Structure</h3>
+          <pre>
+/apps
+  /web
+    /app           # Next.js App Router pages
+      /classes     # Class-related routes
+      /folders     # Folder-related routes
+      /sets        # Study Set routes
+      /settings    # User settings
+      page.tsx     # Dashboard
+      layout.tsx   # Root layout & Providers
+    /convex        # Backend API functions
+      schema.ts    # Database Schema
+      users.ts     # User mutations
+      studySets.ts # Set logic
+  /landing
+    /app           # Marketing site
+    /components    # Reusable landing components (Hero, Features, etc.)
+            </pre
+          >
+        </section>
+
+        <section id="data-model">
+          <h2>6. Data Model (Convex Schema)</h2>
+          <p>
+            The database is relational, enforced via application logic and
+            Convex schemas.
+          </p>
+
+          <h4>Users</h4>
+          <ul>
+            <li>`tokenIdentifier` (String): Link to Clerk ID</li>
+            <li>`name` (String)</li>
+            <li>`email` (String)</li>
+            <li>`role` (String): e.g., 'teacher', 'student'</li>
+          </ul>
+
+          <h4>StudySets</h4>
+          <ul>
+            <li>`ownerId` (User ID)</li>
+            <li>`title` (String)</li>
+            <li>`description` (String)</li>
+            <li>`visibility` (String): 'public' or 'private'</li>
+          </ul>
+
+          <h4>Terms</h4>
+          <ul>
+            <li>`studySetId` (StudySet ID)</li>
+            <li>`term` (String)</li>
+            <li>`definition` (String)</li>
+          </ul>
+
+          <h4>Classes</h4>
+          <ul>
+            <li>`ownerId` (User ID)</li>
+            <li>`name` (String)</li>
+            <li>`description` (String)</li>
+          </ul>
+        </section>
+
+        <section id="ui-ux">
+          <h2>7. UI/UX Design System</h2>
+          <p>The application follows a "Premium Modern" aesthetic.</p>
+          <ul>
+            <li>
+              <strong>Color Palette:</strong> Dominant Indigo/Violet gradients
+              (`from-indigo-600 to-purple-600`) against clean White/Zinc
+              backgrounds.
+            </li>
+            <li>
+              <strong>Typography:</strong> <em>Inter</em> font family. Tight
+              tracking on headings for a modern look.
+            </li>
+            <li>
+              <strong>Glassmorphism:</strong> Use of `backdrop-blur`,
+              semi-transparent white backgrounds, and subtle borders.
+            </li>
+            <li>
+              <strong>Motion:</strong> Staggered entrance animations
+              (`animate-fade-up`), hover lift effects, and smooth transitions.
+            </li>
+          </ul>
+        </section>
+
+        <section id="roadmap">
+          <h2>8. Future Roadmap</h2>
+          <p>Planned features for upcoming sprints.</p>
+          <ol>
+            <li>
+              <strong>AI Generation:</strong> "Generate Flashcards from
+              Text/PDF" using LLMs.
+            </li>
+            <li>
+              <strong>Spaced Repetition:</strong> Advanced algorithm (Sm2) for
+              the "Learn" mode.
+            </li>
+            <li>
+              <strong>Monetization:</strong> Stripe integration for "Pro" plan
+              upgrades.
+            </li>
+            <li>
+              <strong>Mobile App:</strong> React Native export for iOS/Android.
+            </li>
+          </ol>
+        </section>
+
+        <footer>
+          <p>
+            &copy; 2026 SkillMentor Inc. | Internal Documentation | Confidential
+          </p>
+        </footer>
+      </main>
+    </div>
+
+    <script>
+      // Simple smooth scrolling and active link highlighting
+      document.querySelectorAll("nav a").forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+          document
+            .querySelectorAll("nav a")
+            .forEach((a) => a.classList.remove("active"));
+          this.classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>
